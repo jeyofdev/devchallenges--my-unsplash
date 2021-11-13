@@ -15,6 +15,8 @@ export type InputTextPropsType = {
   name: string;
   label: string;
   placeholder: string;
+  value: string;
+  onChange: any;
   type?: string;
 };
 
@@ -22,12 +24,18 @@ export type ImagePropsType = {
   id: number;
   src: string;
   alt: string;
+  label?: string;
 };
 
-type image = Omit<ImagePropsType, 'alt'>;
+export type NewImageDatasType = {
+  label: string;
+  src: string;
+};
+
+export type ImageType = Omit<ImagePropsType, 'alt'>;
 
 export type GalleryPropsType = {
-  images: image[];
+  images: ImageType[];
 };
 
 export type ImgModalType = {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import type { NextPage } from 'next';
 import Header from '../components/organisms/Header';
 import Gallery from '../components/organisms/Gallery';
@@ -6,27 +6,40 @@ import imagesApp from '../datas/files';
 import ImgModal from '../components/organisms/ImgModal';
 import InputText from '../components/atoms/InputText';
 import Button from '../components/atoms/Button';
+import { ImageType, NewImageDatasType } from '../types';
 
 const Home: NextPage = () => {
   const [modalAddPhotoIsShow, setModalAddPhotoIsShow] =
     useState<boolean>(false);
 
-  const handleShowModalAddPhoto = () => {
+  const [photosList, setPhotosList] = useState<ImageType[]>(imagesApp);
+
+  const [newPhoto, setNewPhoto] = useState<NewImageDatasType>({
+    label: '',
+    src: '',
+  });
+
+  const handleShowModalAddPhoto = (): void => {
     setModalAddPhotoIsShow(true);
   };
 
-  const cancelAddPhoto = () => {
+  const cancelAddPhoto = (): void => {
     setModalAddPhotoIsShow(false);
   };
 
-  const AddPhoto = () => {
+  const AddPhoto = (): void => {
+    setPhotosList([...photosList, { id: photosList.length + 1, ...newPhoto }]);
     setModalAddPhotoIsShow(false);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    setNewPhoto({ ...newPhoto, [e.target.name]: e.target.value });
   };
 
   return (
     <div className="container md:mx-auto my-8">
       <Header handleShowModalAddPhoto={handleShowModalAddPhoto} />
-      <Gallery images={imagesApp} />
+      <Gallery images={photosList} />
 
       <ImgModal
         isShow={modalAddPhotoIsShow}
@@ -39,12 +52,16 @@ const Home: NextPage = () => {
               name="label"
               label="Label"
               placeholder="Suspendisse elit massa"
+              value={newPhoto.label}
+              onChange={handleChange}
             />
 
             <InputText
-              name="url"
+              name="src"
               label="Photo URL"
-              placeholder="https://images.unsplash.com/photo-1584395630827-860eee694d7b?ixlib=r..."
+              placeholder="https://images.unsplash.com/..."
+              value={newPhoto.src}
+              onChange={handleChange}
             />
 
             <div className="flex justify-end mt-2">

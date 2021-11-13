@@ -9,6 +9,7 @@ const Gallery = ({ images }: GalleryPropsType) => (
           <Image
             key={image.id}
             id={image.id}
+            label={image.label}
             src={image.src}
             alt={`Image with id ${image.id}`}
           />

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/extensions
 import { ButtonPropsType } from '../../types/index';
 
 const Button = ({ children }: ButtonPropsType) => (

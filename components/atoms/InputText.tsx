@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/extensions
 import { InputTextPropsType } from '../../types';
 
 const InputText = ({ placeholder, icon }: InputTextPropsType) => (

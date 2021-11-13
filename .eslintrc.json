@@ -16,7 +16,9 @@
       "error",
       "ignorePackages",
       {
-        "tsx": "never"
+        "tsx": "never",
+        "ts": "never",
+        "js": "never"
       }
     ]
   },

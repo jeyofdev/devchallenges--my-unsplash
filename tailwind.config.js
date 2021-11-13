@@ -17,20 +17,24 @@ module.exports = {
         successHover: '#42a66a',
         gray: {
           300: '#BDBDBD',
+          700: '#4F4F4F',
           800: '#333',
         },
+        overlay: 'rgba(0,0,0, 0.85)',
       },
       boxShadow: {
         btn: '0px 1px 6px rgba(0, 0, 0, 0.1)',
       },
       lineHeight: {
         btn: '22px',
+        33: '33px',
       },
       spacing: {
         4.5: '18px',
         2.25: '9px',
         35: '35px',
         45: '45px',
+        less50: '-50%',
       },
       width: {
         2: '7px',

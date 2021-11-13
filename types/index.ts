@@ -1,10 +1,17 @@
 export type ButtonPropsType = {
   children: string;
+  type?: string;
+};
+
+export type InputSearchPropsType = {
+  placeholder: string;
+  icon?: boolean;
 };
 
 export type InputTextPropsType = {
+  name: string;
+  label: string;
   placeholder: string;
-  icon?: boolean;
 };
 
 export type ImagePropsType = {
@@ -17,4 +24,8 @@ type image = Omit<ImagePropsType, 'alt'>;
 
 export type GalleryPropsType = {
   images: image[];
+};
+
+export type ImgModalType = {
+  children: any;
 };

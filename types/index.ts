@@ -24,7 +24,8 @@ export type ImagePropsType = {
   id: number;
   src: string;
   alt: string;
-  label?: string;
+  label: string;
+  onClick?: () => void;
 };
 
 export type NewImageDatasType = {
@@ -36,12 +37,14 @@ export type ImageType = Omit<ImagePropsType, 'alt'>;
 
 export type GalleryPropsType = {
   images: ImageType[];
+  // eslint-disable-next-line no-unused-vars
+  handleShowModalRemovePhoto: (id: number) => void;
 };
 
 export type ImgModalType = {
   children: any;
   isShow: boolean;
-  setModalAddPhotoIsShow: Dispatch<SetStateAction<boolean>>;
+  showModal: Dispatch<SetStateAction<boolean>>;
 };
 
 export type HeaderPropsType = {

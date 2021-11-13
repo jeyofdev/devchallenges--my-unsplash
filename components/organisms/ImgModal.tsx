@@ -23,13 +23,9 @@ const customStyles = {
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#__next');
 
-const ImgModal = ({
-  children,
-  isShow,
-  setModalAddPhotoIsShow,
-}: ImgModalType) => {
+const ImgModal = ({ children, isShow, showModal }: ImgModalType) => {
   const handleCloseModal = () => {
-    setModalAddPhotoIsShow(false);
+    showModal(false);
   };
 
   return (

@@ -21,6 +21,7 @@ module.exports = {
           300: '#BDBDBD',
           700: '#4F4F4F',
           800: '#333',
+          900: '#000',
         },
         overlay: 'rgba(0,0,0, 0.85)',
       },
@@ -32,6 +33,7 @@ module.exports = {
         33: '33px',
       },
       spacing: {
+        1.25: '5px',
         4.5: '18px',
         2.25: '9px',
         35: '35px',
@@ -47,9 +49,13 @@ module.exports = {
       },
       fontSize: {
         9: '9px',
+        10: '10px',
       },
       maxWidth: {
         300: '300px',
+      },
+      inset: {
+        32: '32px',
       },
     },
   },

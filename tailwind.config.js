@@ -15,6 +15,8 @@ module.exports = {
         light: '#fff',
         success: '#3DB46D',
         successHover: '#42a66a',
+        danger: '#EB5757',
+        dangerHover: '#cc4e4e',
         gray: {
           300: '#BDBDBD',
           700: '#4F4F4F',

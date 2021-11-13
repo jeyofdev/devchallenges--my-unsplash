@@ -11,7 +11,7 @@ const Home: NextPage = () => (
     <Header />
     <Gallery images={imagesApp} />
 
-    <ImgModal>
+    <ImgModal isShow={false}>
       <h2 className="not-italic font-medium text-2xl leading-33 text-gray-800">
         Add a new photo
         <form className="mt-5">
@@ -30,6 +30,25 @@ const Home: NextPage = () => (
           <div className="flex justify-end mt-2">
             <Button type="default">Cancel</Button>
             <Button>Submit</Button>
+          </div>
+        </form>
+      </h2>
+    </ImgModal>
+
+    <ImgModal isShow>
+      <h2 className="not-italic font-medium text-2xl leading-33 text-gray-800">
+        Are you sure?
+        <form className="mt-5">
+          <InputText
+            name="password"
+            label="Password"
+            placeholder="******************"
+            type="password"
+          />
+
+          <div className="flex justify-end mt-2">
+            <Button type="default">Cancel</Button>
+            <Button type="danger">Delete</Button>
           </div>
         </form>
       </h2>

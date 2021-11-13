@@ -12,6 +12,7 @@ export type InputTextPropsType = {
   name: string;
   label: string;
   placeholder: string;
+  type?: string;
 };
 
 export type ImagePropsType = {
@@ -28,4 +29,5 @@ export type GalleryPropsType = {
 
 export type ImgModalType = {
   children: any;
+  isShow: boolean;
 };

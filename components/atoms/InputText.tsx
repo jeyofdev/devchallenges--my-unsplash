@@ -1,6 +1,11 @@
 import { InputTextPropsType } from '../../types';
 
-const InputText = ({ name, label, placeholder }: InputTextPropsType) => (
+const InputText = ({
+  name,
+  label,
+  placeholder,
+  type = 'text',
+}: InputTextPropsType) => (
   <div>
     <label
       htmlFor={name}
@@ -9,7 +14,7 @@ const InputText = ({ name, label, placeholder }: InputTextPropsType) => (
       {label}
     </label>
     <input
-      type="text"
+      type={type}
       name={name}
       id={name}
       placeholder={placeholder}

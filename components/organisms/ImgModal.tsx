@@ -20,8 +20,8 @@ const customStyles = {
   },
 };
 
-const ImgModal = ({ children }: ImgModalType) => (
-  <Modal isOpen={true} style={customStyles}>
+const ImgModal = ({ children, isShow }: ImgModalType) => (
+  <Modal isOpen={isShow} style={customStyles}>
     <div className="">{children}</div>
   </Modal>
 );

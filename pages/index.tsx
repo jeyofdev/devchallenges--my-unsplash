@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
+import Header from '../components/organisms/Header';
 
 const Home: NextPage = () => (
-  <div>
-    <h1 className="bg-gray-500">App</h1>
+  <div className="container mx-4 md:mx-auto my-8">
+    <Header />
   </div>
 );
 

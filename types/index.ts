@@ -1,6 +1,9 @@
+import { Dispatch, SetStateAction } from 'react';
+
 export type ButtonPropsType = {
   children: string;
   type?: string;
+  onClick?: () => void;
 };
 
 export type InputSearchPropsType = {
@@ -30,4 +33,9 @@ export type GalleryPropsType = {
 export type ImgModalType = {
   children: any;
   isShow: boolean;
+  setModalAddPhotoIsShow: Dispatch<SetStateAction<boolean>>;
+};
+
+export type HeaderPropsType = {
+  handleShowModalAddPhoto: () => void;
 };

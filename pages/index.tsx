@@ -1,5 +1,6 @@
 import { ChangeEvent, useContext, useState } from 'react';
 import type { NextPage } from 'next';
+import { ToastContainer } from 'react-toastify';
 import Header from '../components/organisms/Header';
 import Gallery from '../components/organisms/Gallery';
 import ImgModal from '../components/organisms/ImgModal';
@@ -8,6 +9,7 @@ import Button from '../components/atoms/Button';
 import { NewPhotoType } from '../types';
 import { TypeModal } from '../types/photosContextType';
 import { PhotosContext } from '../context/PhotosContext';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home: NextPage = ({ goodPassword }: any) => {
   const context = useContext(PhotosContext);
@@ -112,6 +114,8 @@ const Home: NextPage = ({ goodPassword }: any) => {
           </form>
         </h2>
       </ImgModal>
+
+      <ToastContainer position="top-right" autoClose={3000} closeOnClick />
     </div>
   );
 };

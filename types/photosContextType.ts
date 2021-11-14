@@ -1,12 +1,18 @@
+/* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 
 import { Dispatch, SetStateAction } from 'react';
 import { NewPhotoType, PhotoType } from '.';
 
-// eslint-disable-next-line no-shadow
 export enum TypeModal {
   ADD = 'add',
   DELETE = 'delete',
+}
+
+export enum NotifType {
+  ADD_SUCCESS = 'ADD_SUCCESS',
+  DELETE_SUCCESS = 'DELETE_SUCCESS',
+  ERROR = 'ERROR',
 }
 
 export type RemovePhotoType = (

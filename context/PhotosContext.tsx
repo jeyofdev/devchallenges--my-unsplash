@@ -1,7 +1,9 @@
 import { createContext, ReactNode, useState } from 'react';
+import { toast } from 'react-toastify';
 import imagesApp from '../datas/files';
 import { NewPhotoType, PhotoType } from '../types';
 import {
+  NotifType,
   PhotosContextType,
   RemovePhotoType,
   TypeModal,
@@ -20,6 +22,18 @@ const PhotosContextProvider = ({ children }: { children: ReactNode }) => {
 
   const [photoIdToRemove, setPhotoIdToRemove] = useState<number>(0);
 
+  const notify = (type: NotifType) => {
+    if (type === NotifType.ADD_SUCCESS) {
+      toast.success('your image has been added successfully !', {
+        theme: 'colored',
+      });
+    } else if (type === NotifType.DELETE_SUCCESS) {
+      toast.error('Successful deleted !', {
+        theme: 'colored',
+      });
+    }
+  };
+
   const hideOrShowModal = (type: TypeModal): void => {
     if (type === TypeModal.ADD) {
       setModalAddPhotoIsShow(!modalAddPhotoIsShow);
@@ -32,6 +46,7 @@ const PhotosContextProvider = ({ children }: { children: ReactNode }) => {
 
   const AddPhoto = (newPhoto: NewPhotoType): void => {
     setPhotosList([...photosList, { id: photosList.length + 1, ...newPhoto }]);
+    notify(NotifType.ADD_SUCCESS);
     setModalAddPhotoIsShow(false);
   };
 
@@ -43,6 +58,7 @@ const PhotosContextProvider = ({ children }: { children: ReactNode }) => {
   ) => {
     if (password === goodPassword) {
       setPhotosList(photosList.filter((photo) => photo.id !== id));
+      notify(NotifType.DELETE_SUCCESS);
     }
 
     setModalDeletePhotoIsShow(false);

@@ -76,6 +76,7 @@ const PhotosContextProvider = ({ children }: { children: ReactNode }) => {
         AddPhoto,
         removePhoto,
         setPhotoIdToRemove,
+        setPhotosList,
       }}
     >
       {children}

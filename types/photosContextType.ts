@@ -31,4 +31,5 @@ export type PhotosContextType = {
   AddPhoto: (newPhoto: NewPhotoType) => void;
   removePhoto: RemovePhotoType;
   setPhotoIdToRemove: Dispatch<SetStateAction<number>>;
+  setPhotosList: Dispatch<SetStateAction<PhotoType[]>>;
 };

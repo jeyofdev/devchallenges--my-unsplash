@@ -23,20 +23,10 @@ const customStyles = {
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#__next');
 
-const ImgModal = ({ children, isShow, showModal }: ImgModalType) => {
-  const handleCloseModal = () => {
-    showModal(false);
-  };
-
-  return (
-    <Modal
-      isOpen={isShow}
-      style={customStyles}
-      onRequestClose={handleCloseModal}
-    >
-      <div className="">{children}</div>
-    </Modal>
-  );
-};
+const ImgModal = ({ children, isShow, showModal }: ImgModalType) => (
+  <Modal isOpen={isShow} style={customStyles} onRequestClose={showModal}>
+    <div className="">{children}</div>
+  </Modal>
+);
 
 export default ImgModal;

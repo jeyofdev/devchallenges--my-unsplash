@@ -1,7 +1,7 @@
 import { GalleryPropsType } from '../../types';
 import Image from '../atoms/Image';
 
-const Gallery = ({ images, handleShowModalRemovePhoto }: GalleryPropsType) => (
+const Gallery = ({ images }: GalleryPropsType) => (
   <div className="mt-16">
     <div className="box-border mx-auto sm:masonry-2 md:masonry-3 before:box-inherit after:box-inherit">
       {images.length > 0 ? (
@@ -12,7 +12,6 @@ const Gallery = ({ images, handleShowModalRemovePhoto }: GalleryPropsType) => (
             label={image.label}
             src={image.src}
             alt={`Image with id ${image.id}`}
-            onClick={() => handleShowModalRemovePhoto(image.id)}
           />
         ))
       ) : (

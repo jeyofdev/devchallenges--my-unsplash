@@ -1,5 +1,3 @@
-import { Dispatch, SetStateAction } from 'react';
-
 export type ButtonPropsType = {
   children: string;
   type?: string;
@@ -20,31 +18,28 @@ export type InputTextPropsType = {
   type?: string;
 };
 
-export type ImagePropsType = {
+export type PhotoPropsType = {
   id: number;
   src: string;
   alt: string;
   label: string;
-  onClick?: () => void;
 };
 
-export type NewImageDatasType = {
+export type NewPhotoType = {
   label: string;
   src: string;
 };
 
-export type ImageType = Omit<ImagePropsType, 'alt'>;
+export type PhotoType = Omit<PhotoPropsType, 'alt'>;
 
 export type GalleryPropsType = {
-  images: ImageType[];
-  // eslint-disable-next-line no-unused-vars
-  handleShowModalRemovePhoto: (id: number) => void;
+  images?: PhotoType[];
 };
 
 export type ImgModalType = {
   children: any;
-  isShow: boolean;
-  showModal: Dispatch<SetStateAction<boolean>>;
+  isShow?: boolean;
+  showModal: any;
 };
 
 export type HeaderPropsType = {

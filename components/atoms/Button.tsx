@@ -10,7 +10,11 @@ const Button = ({
   const classes =
     bgType === 'default'
       ? 'bg-transparent py-4 px-5 not-italic font-bold text-base leading-22 text-gray-300'
-      : `bg-${bgType} hover:bg-${bgType}Hover py-4 px-5 rounded-xl shadow-btn not-italic font-bold text-base leading-22 text-light`;
+      : `${bgType === 'success' ? 'bg-success' : 'bg-danger'} ${
+          bgType === 'success'
+            ? 'hover:bg-successHover'
+            : 'hover:bg-dangerHover'
+        } py-4 px-5 rounded-xl shadow-btn not-italic font-bold text-base leading-22 text-light`;
 
   return (
     <button type={type} className={classes} onClick={onClick}>

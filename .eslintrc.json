@@ -24,7 +24,8 @@
     "operator-linebreak": "off",
     "object-curly-newline": "off",
     "implicit-arrow-linebreak": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "indent": "off"
   },
-  "ignorePatterns": [".eslintrc.json"]
+  "ignorePatterns": [".eslintrc.json", "tailwind.config.js"]
 }

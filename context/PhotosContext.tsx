@@ -50,19 +50,13 @@ const PhotosContextProvider = ({ children }: { children: ReactNode }) => {
     setModalAddPhotoIsShow(false);
   };
 
-  const removePhoto: RemovePhotoType = (
-    id,
-    password,
-    goodPassword,
-    setPassword
-  ) => {
+  const removePhoto: RemovePhotoType = (id, password, goodPassword) => {
     if (password === goodPassword) {
       setPhotosList(photosList.filter((photo) => photo.id !== id));
       notify(NotifType.DELETE_SUCCESS);
     }
 
     setModalDeletePhotoIsShow(false);
-    setPassword('');
   };
 
   return (

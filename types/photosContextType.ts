@@ -18,8 +18,7 @@ export enum NotifType {
 export type RemovePhotoType = (
   id: number,
   password: string,
-  goodPassword: string,
-  setPassword: Dispatch<SetStateAction<string>>
+  goodPassword: string
 ) => void;
 
 export type PhotosContextType = {

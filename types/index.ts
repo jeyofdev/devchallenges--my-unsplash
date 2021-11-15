@@ -1,6 +1,9 @@
+import { FieldValues, UseFormRegister } from 'react-hook-form';
+
 export type ButtonPropsType = {
   children: string;
-  type?: string;
+  bgType?: string;
+  type?: 'button' | 'submit';
   onClick?: () => void;
 };
 
@@ -13,9 +16,11 @@ export type InputTextPropsType = {
   name: string;
   label: string;
   placeholder: string;
-  value: string;
-  onChange: any;
   type?: string;
+  register: UseFormRegister<FieldValues>;
+  validation: any;
+  error: any;
+  isOk?: string;
 };
 
 export type PhotoPropsType = {
@@ -38,8 +43,8 @@ export type GalleryPropsType = {
 
 export type ImgModalType = {
   children: any;
-  isShow?: boolean;
-  showModal: any;
+  isShow: boolean;
+  showModal: () => void;
 };
 
 export type HeaderPropsType = {

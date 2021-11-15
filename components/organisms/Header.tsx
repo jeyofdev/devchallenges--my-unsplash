@@ -10,7 +10,9 @@ const Header = ({ handleShowModalAddPhoto }: HeaderPropsType) => (
       <InputSearch placeholder="Search by name" icon />
     </div>
 
-    <Button onClick={handleShowModalAddPhoto}>Add a photo</Button>
+    <Button type="button" onClick={handleShowModalAddPhoto}>
+      Add a photo
+    </Button>
   </div>
 );
 

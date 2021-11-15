@@ -54,7 +54,7 @@ const DeletePhotoForm = ({ goodPassword }: { goodPassword: string }) => {
 
       <div className="flex justify-end mt-2">
         <Button
-          bgType="submit"
+          bgType="default"
           type="submit"
           onClick={() => context?.hideOrShowModal(TypeModal.DELETE)}
         >

@@ -43,7 +43,7 @@ export type GalleryPropsType = {
 
 export type ImgModalType = {
   children: any;
-  isShow: boolean;
+  isShow: boolean | any;
   showModal: () => void;
 };
 
